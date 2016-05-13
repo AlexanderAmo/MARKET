@@ -24,9 +24,8 @@ public class Jump : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		var running = false;
-		var jumping = false;
-		var running2 = false;
+		var goingleft = false;
+		var goingright = false;
 		if (inputState.standing) {
 
 
@@ -45,13 +44,13 @@ public class Jump : MonoBehaviour {
 				body2d.velocity = new Vector2 (walkSpeed * -1 , 0);
 
 				body2d.velocity = new Vector2 (walkSpeed * -1 , 0);
-				//animator.SetBool ("Running", running);
+				animator.SetBool ("GoingLeft", goingleft);
 			}
 			if (inputState.rightArrow) {
 				body2d.velocity = new Vector2 (walkSpeed , 0);
 
 				body2d.velocity = new Vector2 (walkSpeed , 0);
-				//animator.SetBool ("Running", running);
+				animator.SetBool ("GoingRight", goingright);
 		
 		}
 	}

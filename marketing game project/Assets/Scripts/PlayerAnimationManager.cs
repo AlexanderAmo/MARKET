@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System;
+using UnityEngine.UI;
 public class PlayerAnimationManager : MonoBehaviour {
 
 	private Animator animator;
@@ -16,29 +17,14 @@ public class PlayerAnimationManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		var running = false;
-		var running2 = false;
-		var jumping = false;
+		var goingright = false;
+		var goingleft = false;
 
 		if(inputState.rightArrow = true){
-			running = true;
-			//animator.SetBool ("Running", running);
+			animator.SetBool ("GoingRight", goingright);
 		}
 		if (inputState.leftArrow = true) {
-			running = true;
-			//animator.SetBool ("Running", running);
+			animator.SetBool ("GoingLeft", goingleft);
 		}
-		if(inputState.actionButton = true){
-			jumping = true;
-			//animator.SetBool ("Jumping", jumping);
-		}
-		if (inputState.actionButton2 = true) {
-			jumping = true;
-			//animator.SetBool ("Jumping", jumping);
-		}
-		//animator.SetBool ("Running", running);
-		//animator.SetBool ("Jumping", jumping);
-
-
 	}
 }
