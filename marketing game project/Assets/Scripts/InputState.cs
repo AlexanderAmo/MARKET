@@ -20,8 +20,8 @@ public class InputState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		actionButton = Input.GetMouseButtonDown(0);
-		actionButton2 = Input.GetMouseButtonDown(1);
+		actionButton = Input.GetKeyDown(KeyCode.E);
+		actionButton2 = Input.GetKeyDown(KeyCode.Space);
 		leftArrow = Input.GetKey(KeyCode.A);
 		rightArrow = Input.GetKey (KeyCode.D);
 
