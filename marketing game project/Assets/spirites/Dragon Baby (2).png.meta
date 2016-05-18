@@ -1,9 +1,19 @@
 fileFormatVersion: 2
 guid: 32a3432e6a2e9614dbe83950723f1ab6
-timeCreated: 1463597538
+timeCreated: 1463597578
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Dragon Baby (2)_0
+    21300002: Dragon Baby (2)_1
+    21300004: Dragon Baby (2)_2
+    21300006: Dragon Baby (2)_3
+    21300008: Dragon Baby (2)_4
+    21300010: Dragon Baby (2)_5
+    21300012: Dragon Baby (2)_6
+    21300014: Dragon Baby (2)_7
+    21300016: Dragon Baby (2)_8
+    21300018: Dragon Baby (2)_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,29 +36,129 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -2
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 3
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Dragon Baby (2)_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 13
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dragon Baby (2)_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 13
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dragon Baby (2)_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 13
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dragon Baby (2)_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 13
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dragon Baby (2)_4
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 13
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dragon Baby (2)_5
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 13
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dragon Baby (2)_6
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 13
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dragon Baby (2)_7
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 13
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dragon Baby (2)_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 13
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dragon Baby (2)_9
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 13
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
