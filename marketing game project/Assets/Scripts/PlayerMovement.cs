@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		isGrounded = Physics2D.Linecast (myTrans.position, TagGround.position, playermask);
+		isGrounded = Physics2D.Linecast (myTrans.position, TagGround.position,playermask);
 
 
 		move (Input.GetAxisRaw("Horizontal"));
