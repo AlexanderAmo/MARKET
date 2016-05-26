@@ -36,8 +36,4 @@ public class animatorController : MonoBehaviour {
 	public void UpdateIsGrounded(bool isGrounded) {
 		myAnim.SetBool ("IsGrounded", isGrounded);
 	}
-	// Update is called once per frame
-	void Update () {
-				
-	}
 }

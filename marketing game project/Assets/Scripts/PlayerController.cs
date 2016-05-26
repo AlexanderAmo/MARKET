@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	Rigidbody2D myRigid;
 	public bool isGrounded = false;
 	animatorController myAnim;
-	float hInput;
+	float hInput = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -25,15 +25,18 @@ public class PlayerController : MonoBehaviour {
 		isGrounded = Physics2D.Linecast (myTrans.position, TagGround.position,playermask);
 		myAnim.UpdateIsGrounded (isGrounded);
 
+		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT
 		hInput = Input.GetAxisRaw("Horizontal");
 		myAnim.UpdateSpeed (hInput);
 		if (Input.GetButtonDown ("Jump")) 
 			jump();
 
+		#endif
 		move (hInput);
 	}
 
-	public void move(float HorizontalInput){
+	void move(float HorizontalInput){
+
 		Vector2 moveVel = myRigid.velocity;
 		moveVel.x = HorizontalInput * speed;
 		myRigid.velocity = moveVel;
@@ -45,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	public void startMoving(float horizonalInput){
 		hInput = horizonalInput;
-		myAnim.UpdateSpeed (hInput);
+		myAnim.UpdateSpeed (horizonalInput);
 
 	}
 
