@@ -8,6 +8,7 @@ public class animatorController : MonoBehaviour {
 	Transform myTrans;
 	Animator myAnim;
 	Vector3 artScaleCache;
+	public string Dir = "Right";
 
 
 	// Use this for initialization
@@ -19,18 +20,29 @@ public class animatorController : MonoBehaviour {
 		artScaleCache = myTrans.localScale;
 	}
 
-
+	public string getDir(){
+		return Dir;
+	}
 	void FlipArt(float currentSpeed){
+
+
 		if ((currentSpeed < 0 && artScaleCache.x == 1) ||
 			(currentSpeed > 0 && artScaleCache.x == -1)) {
 			artScaleCache.x*= -1;
 			myTrans.localScale = artScaleCache;
+		}
+		if (artScaleCache.x == 1) {
+			Dir = "Right";
+		}
+		if (artScaleCache.x == -1) {
+			Dir = "Left";
 		}
 	}
 
 	public void UpdateSpeed(float currentSpeed){
 		myAnim.SetFloat ("Speed", currentSpeed);
 		FlipArt (currentSpeed);
+
 	}
 
 	public void UpdateIsGrounded(bool isGrounded) {

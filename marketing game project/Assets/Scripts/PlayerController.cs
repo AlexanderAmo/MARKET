@@ -11,6 +11,16 @@ public class PlayerController : MonoBehaviour {
 	animatorController myAnim;
 	float hInput = 0;
 
+	Rigidbody2D Ball;
+	Rigidbody2D bare;
+	public Transform FirePoint;
+	public Rigidbody2D Fireball;
+	public Rigidbody2D BackwardsFireball;
+	float Speed2;
+
+
+
+
 	// Use this for initialization
 	void Start () {
 		myRigid = this.GetComponent<Rigidbody2D> ();
@@ -30,7 +40,9 @@ public class PlayerController : MonoBehaviour {
 		myAnim.UpdateSpeed (hInput);
 		if (Input.GetButtonDown ("Jump")) 
 			jump();
-
+		if (Input.GetKeyDown(KeyCode.W)){
+			FireBallFire();
+		}
 		#endif
 		move (hInput);
 	}
@@ -49,7 +61,17 @@ public class PlayerController : MonoBehaviour {
 	public void startMoving(float horizonalInput){
 		hInput = horizonalInput;
 		myAnim.UpdateSpeed (horizonalInput);
-
 	}
 
+	public void FireBallFire(){
+		if (myAnim.getDir().Equals("Right")) {
+			Speed2 = 50;
+			Ball = Instantiate (Fireball, FirePoint.position, FirePoint.rotation) as Rigidbody2D;
+		}
+		if (myAnim.getDir().Equals("Left")) {
+			Speed2 = -50;
+			bare = Instantiate (Fireball, FirePoint.position, FirePoint.rotation) as Rigidbody2D;
+		}
+	Ball.velocity = new Vector2 (Speed2, 0);
+	}
 }
