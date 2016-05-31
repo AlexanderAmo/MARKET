@@ -12,21 +12,21 @@ public class PlayerController : MonoBehaviour {
 	float hInput = 0;
 
 	Rigidbody2D Ball;
-	Rigidbody2D bare;
 	public Transform FirePoint;
 	public Rigidbody2D Fireball;
-	public Rigidbody2D BackwardsFireball;
-	float Speed2;
+	public float Speed2;
+	Animator life;
 
 
 
 
 	// Use this for initialization
 	void Start () {
+		myAnim = animatorController.instance;
 		myRigid = this.GetComponent<Rigidbody2D> ();
 		myTrans = this.transform;
 		TagGround = GameObject.Find (this.name + "/tag_ground").transform;
-		myAnim = animatorController.instance;
+
 	}
 	
 	// Update is called once per frame
@@ -65,13 +65,18 @@ public class PlayerController : MonoBehaviour {
 
 	public void FireBallFire(){
 		if (myAnim.getDir().Equals("Right")) {
+			Fireball.transform.localScale = new Vector3(-1, 1, 1);
 			Speed2 = 50;
 			Ball = Instantiate (Fireball, FirePoint.position, FirePoint.rotation) as Rigidbody2D;
+
 		}
 		if (myAnim.getDir().Equals("Left")) {
+			Fireball.transform.localScale = new Vector3(1, 1, 1);
 			Speed2 = -50;
-			bare = Instantiate (Fireball, FirePoint.position, FirePoint.rotation) as Rigidbody2D;
+			Ball = Instantiate (Fireball, FirePoint.position, FirePoint.rotation) as Rigidbody2D;
+
+
 		}
-	Ball.velocity = new Vector2 (Speed2, 0);
+		Ball.velocity = new Vector2 (Speed2, 0);
 	}
 }

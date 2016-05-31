@@ -8,7 +8,7 @@ public class animatorController : MonoBehaviour {
 	Transform myTrans;
 	Animator myAnim;
 	Vector3 artScaleCache;
-	public string Dir = "Right";
+	string Dir = "Right";
 
 
 	// Use this for initialization
@@ -38,6 +38,9 @@ public class animatorController : MonoBehaviour {
 			Dir = "Left";
 		}
 	}
+	public void UpdateIsGrounded(bool isGrounded) {
+		myAnim.SetBool ("IsGrounded", isGrounded);
+	}
 
 	public void UpdateSpeed(float currentSpeed){
 		myAnim.SetFloat ("Speed", currentSpeed);
@@ -45,7 +48,4 @@ public class animatorController : MonoBehaviour {
 
 	}
 
-	public void UpdateIsGrounded(bool isGrounded) {
-		myAnim.SetBool ("IsGrounded", isGrounded);
-	}
 }
