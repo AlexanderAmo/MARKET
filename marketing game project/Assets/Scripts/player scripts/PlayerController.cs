@@ -79,4 +79,10 @@ public class PlayerController : MonoBehaviour {
 		}
 		Ball.velocity = new Vector2 (Speed2, 0);
 	}
+
+	void OnCollisionEnter2D(Collision2D enemy){
+		if (enemy.gameObject.tag == "enemy") {
+			Application.LoadLevel("GameOver");
+		}
+	}
 }

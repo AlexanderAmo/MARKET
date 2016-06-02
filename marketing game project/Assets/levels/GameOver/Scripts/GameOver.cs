@@ -19,9 +19,9 @@ public class GameOver : MonoBehaviour {
 		
 		if (showGUIOutline) {
 			//displays our buttons (With GUI Outline)
-			if (GUI.Button (new Rect (Screen.width * guiPlacementX1, Screen.height * guiPlacementY1, Screen.width * .5f, Screen.height * .1f), "Continue?")) {
-				print ("Clicked Continue");
-				Application.LoadLevel("Lvl1");
+			if (GUI.Button (new Rect (Screen.width * guiPlacementX1, Screen.height * guiPlacementY1, Screen.width * .5f, Screen.height * .1f), "Main Menu")) {
+				// print ("Clicked Continue");
+				Application.LoadLevel("MainMenu");
 			}
 		} 
 		else {
