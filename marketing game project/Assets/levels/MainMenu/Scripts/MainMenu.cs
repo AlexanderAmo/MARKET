@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour {
 
 	void OnGUI(){
 		//Display Our Background Texture
-		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), backgroundTexture);
+
 	
 
 		if (showGUIOutline) {
