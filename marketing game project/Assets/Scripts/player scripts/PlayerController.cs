@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-	
+	//player
 	public float speed = 10f, jumpVelocity = 10f;
 	public LayerMask playermask;
 	Transform myTrans, TagGround;
@@ -11,14 +11,20 @@ public class PlayerController : MonoBehaviour {
 	animatorController myAnim;
 	float hInput = 0;
 
+	//fireball
 	Rigidbody2D Ball;
 	public Transform FirePoint;
 	public Rigidbody2D Fireball;
-	public float Speed2;
+	float Speed2, amountOfFire;
 	Animator life;
+	
+	//lives
+	float lives = 3;
 
+	void Awake(){
+		myAnim = animatorController.instance;
 
-
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +32,8 @@ public class PlayerController : MonoBehaviour {
 		myRigid = this.GetComponent<Rigidbody2D> ();
 		myTrans = this.transform;
 		TagGround = GameObject.Find (this.name + "/tag_ground").transform;
+
+		amountOfFire = 20;
 
 	}
 	
@@ -64,25 +72,40 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void FireBallFire(){
-		if (myAnim.getDir().Equals("Right")) {
-			Fireball.transform.localScale = new Vector3(-1, 1, 1);
-			Speed2 = 50;
-			Ball = Instantiate (Fireball, FirePoint.position, FirePoint.rotation) as Rigidbody2D;
 
+
+		if (amountOfFire >= 0) {
+
+			if (myAnim.getDir ().Equals ("Right")) {
+				Fireball.transform.localScale = new Vector3 (-1, 1, 1);
+				Speed2 = 50;
+				Ball = Instantiate (Fireball, FirePoint.position, FirePoint.rotation) as Rigidbody2D;
+				amountOfFire -= 1;
+				print ("fireball -1");
+			}
+			if (myAnim.getDir ().Equals ("Left")) {
+				Fireball.transform.localScale = new Vector3 (1, 1, 1);
+				Speed2 = -50;
+				Ball = Instantiate (Fireball, FirePoint.position, FirePoint.rotation) as Rigidbody2D;
+				amountOfFire -= 1;
+				print ("fireball -1");
+
+			}
+
+			Ball.velocity = new Vector2 (Speed2, 0);
 		}
-		if (myAnim.getDir().Equals("Left")) {
-			Fireball.transform.localScale = new Vector3(1, 1, 1);
-			Speed2 = -50;
-			Ball = Instantiate (Fireball, FirePoint.position, FirePoint.rotation) as Rigidbody2D;
-
-
-		}
-		Ball.velocity = new Vector2 (Speed2, 0);
 	}
+
+		
+
+
+
+
 
 	void OnCollisionEnter2D(Collision2D enemy){
 		if (enemy.gameObject.tag == "enemy") {
 			Application.LoadLevel("GameOver");
+
 		}
 	}
 }

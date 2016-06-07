@@ -10,6 +10,11 @@ public class animatorController : MonoBehaviour {
 	Vector3 artScaleCache;
 	string Dir = "Right";
 
+	void Awake(){
+		myAnim = this.gameObject.GetComponent<Animator>();
+
+	}
+
 
 	// Use this for initialization
 	void Start () {

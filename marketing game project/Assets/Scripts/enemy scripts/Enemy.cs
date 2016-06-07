@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		myAnim.SetBool ("Attack", false);
+		//myAnim.SetBool ("Attack", false);
 
 		Vector2 lineCastPos = myTrans.position - myTrans.right * myWidth;
 		Debug.DrawLine (lineCastPos, lineCastPos + -Vector2.up*10);
@@ -41,10 +41,16 @@ public class Enemy : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter2D(Collider2D player){
-		if (player.gameObject.tag == "player") {
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "player") {
 
 			myAnim.SetBool ("Attack", true);
+		}
+	}
+	void OnTriggerExit2D(Collider2D other){
+		if (other.gameObject.tag == "player") {
+			
+			myAnim.SetBool ("Attack", false);
 		}
 	}
 }
